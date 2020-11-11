@@ -30,7 +30,7 @@ namespace Task05
         {
             int N = int.Parse(Console.ReadLine());
 
-            int[] arr = new int[N];
+            long[] arr = new long[N];
             arr[0] = 1;
             arr[1] = 1;
 
@@ -39,7 +39,7 @@ namespace Task05
             OutputArray(arr);
         }
 
-        static void FillArray(ref int[] arr)
+        static void FillArray(ref long[] arr)
         {
             arr[0] = 1;
             for (int i = 2; i < arr.Length; i++)
@@ -48,7 +48,7 @@ namespace Task05
             }
         }
 
-        static void OutputArray(int[] array)
+        static void OutputArray(long[] array)
         {
             for (int i = array.Length - 1; i >= 0; i--)
             {

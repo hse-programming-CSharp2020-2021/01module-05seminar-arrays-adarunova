@@ -42,8 +42,10 @@ namespace Task02
             }
         }
 
-        static int QuickMultiply(int x)
+        static long QuickMultiply(int x)
         {
+            if (x > 30)
+                return (long)Math.Pow(2, x);
             return 2 << (x - 1);
         }
 

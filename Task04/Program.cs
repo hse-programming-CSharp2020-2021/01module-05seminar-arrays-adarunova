@@ -31,7 +31,7 @@ namespace Task04
             int A = int.Parse(Console.ReadLine());
             int D = int.Parse(Console.ReadLine());
 
-            int[] arr = new int[N];
+            long[] arr = new long[N];
             arr[0] = A;
 
             FillArray(ref arr, D);
@@ -39,7 +39,7 @@ namespace Task04
             OutputArray(arr);
         }
 
-        static void FillArray(ref int[] arr, int D)
+        static void FillArray(ref long[] arr, int D)
         {
             for (int i = 1; i < arr.Length; i++)
             {
@@ -47,7 +47,7 @@ namespace Task04
             }
         }
 
-        static void OutputArray(int[] array)
+        static void OutputArray(long[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
