@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 /*
  * Написать метод замены всех вхождений максимального элемента массива значением, переданным в параметре.​
@@ -38,21 +39,37 @@ namespace Task01
         public static void RunTask01()
         {
             int numOfItems = int.Parse(Console.ReadLine());
-            
-            int[] array;
-            // TODO: считайте массив
-
-            int newValue; // значение, которым нужно заменить все максимальные элементы
-            // TODO: считайте новое значение
-            
+            int[] array = new int[numOfItems];
+            for (int i = 0; i < numOfItems; i++)
+            {
+                array[i] = int.Parse(Console.ReadLine());
+            }
+            int newValue = int.Parse(Console.ReadLine());
+            OutputArray(array);
             ReplaceMaxElem(ref array, newValue);
-            
-            // TODO: реализуйте вывод необходимых данных
+            OutputArray(array);
+        }
+
+        static void OutputArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine();
         }
 
         static void ReplaceMaxElem(ref int[] arr, int val)
         {
-            // TODO: реализуйте замену всех вхождений максимального элемента массива arr на значение val
+            int max = arr.Max();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == max)
+                {
+                    arr[i] = val;
+                }
+            }
+
         }
     }
 }

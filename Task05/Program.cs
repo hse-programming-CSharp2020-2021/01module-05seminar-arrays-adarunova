@@ -30,9 +30,30 @@ namespace Task05
         {
             int N = int.Parse(Console.ReadLine());
 
-            // TODO: объявите массив и вызовите метод для его заполнения
-            
-            // TODO: выведите массив на экран в требуемом порядке
+            long[] arr = new long[N];
+            arr[0] = 1;
+            arr[1] = 1;
+
+            FillArray(ref arr);
+
+            OutputArray(arr);
+        }
+
+        static void FillArray(ref long[] arr)
+        {
+            arr[0] = 1;
+            for (int i = 2; i < arr.Length; i++)
+            {
+                arr[i] = arr[i - 1] + arr[i - 2];
+            }
+        }
+
+        static void OutputArray(long[] array)
+        {
+            for (int i = array.Length - 1; i >= 0; i--)
+            {
+                Console.Write(array[i] + " ");
+            }
         }
     }
 }

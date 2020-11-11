@@ -28,17 +28,31 @@ namespace Task04
         {
             int N = int.Parse(Console.ReadLine());
 
-            int A, D;
-            // TODO: считайте необходимые значения A и D
-            
-            // TODO: инициализируйте массив и передайте его в соответствующий метод вместе с необходимыми значениями 
-            
-            // TODO: выведите массив на экран
+            int A = int.Parse(Console.ReadLine());
+            int D = int.Parse(Console.ReadLine());
+
+            long[] arr = new long[N];
+            arr[0] = A;
+
+            FillArray(ref arr, D);
+
+            OutputArray(arr);
         }
-        
-        static void FillArray()
+
+        static void FillArray(ref long[] arr, int D)
         {
-            // TODO: заполните массив соответствующими данными
+            for (int i = 1; i < arr.Length; i++)
+            {
+                arr[i] = arr[i - 1] + D;
+            }
+        }
+
+        static void OutputArray(long[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
         }
     }
 }
