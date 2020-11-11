@@ -25,15 +25,29 @@ namespace Task03
         public static void RunTask03()
         {
             int N = int.Parse(Console.ReadLine());
-            
-            // TODO: инициализируйте массив и передайте его в соответствующий метод
 
-            // TODO: выведите массив на экран
+            int[] arr = new int[N];
+
+            FillArray(ref arr);
+
+            OutputArray(arr);
         }
 
-        static void FillArray()
+        static void FillArray(ref int[] arr)
         {
-            // TODO: заполните массив соответствующими данными
+            arr[0] = 1;
+            for (int i = 1; i < arr.Length; i++)
+            {
+                arr[i] = arr[i - 1] + 2;
+            }
+        }
+
+        static void OutputArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
         }
     }
 }

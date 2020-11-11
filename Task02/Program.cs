@@ -26,15 +26,33 @@ namespace Task02
         {
             int N = int.Parse(Console.ReadLine());
 
-            // TODO: инициализируйте массив и передайте его в соответствующий метод
+            long[] arr = new long[N];
 
-            
-            // TODO: выведите массив на экран
+            FillArray(ref arr);
+
+            OutputArray(arr);
         }
 
-        static void FillArray()
+        static void FillArray(ref long[] arr)
         {
-            // TODO: заполните массив соответствующими данными
+            arr[0] = 1;
+            for(int i = 1; i < arr.Length; i++)
+            {
+                arr[i] = QuickMultiply(i);
+            }
+        }
+
+        static int QuickMultiply(int x)
+        {
+            return 2 << (x - 1);
+        }
+
+        static void OutputArray(long[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
         }
     }
 }
